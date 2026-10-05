@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHADGO ACADEMEY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CHADGO ACADEMEY</h1>
+    <p>Learn • Practice • Succeed 🚀</p>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+    <h2>🏠 Home</h2>
+
+    <div class="card">
+        <h3>Welcome to CHADGO ACADEMEY 👋</h3>
+        <p>Learn today, succeed tomorrow!</p>
+    </div>
+
+    <div class="card">
+        <h3>📊 Progress</h3>
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+        <p id="progressText">0% completed</p>
+    </div>
+
+    <div class="card">
+        <h3>🎯 Daily Goals</h3>
+        <button onclick="completeGoal()">📚 Study</button>
+        <button onclick="completeGoal()">💻 Coding</button>
+        <button onclick="completeGoal()">📝 Practice</button>
+    </div>
+</section>
+
+
+<!-- LEARN -->
+<section id="learn" class="page">
+    <h2>📚 Learn</h2>
+
+    <button onclick="learn('Mathematics')">➗ Mathematics</button>
+    <button onclick="learn('General Science')">🔬 General Science</button>
+    <button onclick="learn('English')">🇬🇧 English</button>
+    <button onclick="learn('Afaan Oromoo')">🟢 Afaan Oromoo</button>
+    <button onclick="learn('Information Technology')">💻 Information Technology</button>
+
+    <div id="learnResult"></div>
+</section>
+
+
+<!-- QUIZ -->
+<section id="quiz" class="page">
+    <h2>📝 Quiz</h2>
+
+    <button onclick="quiz('Mathematics')">➗ Mathematics</button>
+    <button onclick="quiz('Science')">🔬 Science</button>
+    <button onclick="quiz('English')">🇬🇧 English</button>
+    <button onclick="quiz('Afaan Oromoo')">🟢 Afaan Oromoo</button>
+
+    <div id="quizResult"></div>
+</section>
+
+
+<!-- GOALS -->
+<section id="goals" class="page">
+    <h2>🎯 Goals</h2>
+
+    <div class="card">
+        <h3>🚀 My Goals</h3>
+
+        <p>💻 Become a Software Engineer</p>
+        <p>🐍 Learn Python</p>
+        <p>🌐 Build Websites</p>
+        <p>📱 Create Useful Applications</p>
+
+        <button onclick="startGoal()">🚀 Start Goal</button>
+    </div>
+</section>
+
+
+<!-- PROFILE -->
+<section id="profile" class="page">
+    <h2>👤 Profile</h2>
+
+    <div class="card profile">
+        <div class="avatar">👨‍💻</div>
+
+        <h3 id="name">Caalaa</h3>
+
+        <p>Student • Future Software Engineer</p>
+
+        <button onclick="changeName()">✏️ Change Name</button>
+    </div>
+</section>
+
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+    <h2>⚙️ Settings</h2>
+
+    <div class="setting">
+        <div>
+            <b>🌙 Dark Mode</b>
+            <small>Change app appearance</small>
+        </div>
+
+        <input
+            type="checkbox"
+            id="darkMode"
+            checked
+            onchange="darkMode()"
+        >
+    </div>
+
+    <div class="setting">
+        <div>
+            <b>🔔 Notifications</b>
+            <small>Study notifications</small>
+        </div>
+
+        <input type="checkbox">
+    </div>
+
+    <div class="setting">
+        <div>
+            <b>🔊 Sound</b>
+            <small>App sound</small>
+        </div>
+
+        <input type="checkbox" checked>
+    </div>
+
+    <div class="setting">
+        <div>
+            <b>🌐 Language</b>
+            <small>Choose language</small>
+        </div>
+
+        <select>
+            <option>English</option>
+            <option>Afaan Oromoo</option>
+            <option>Amharic</option>
+        </select>
+    </div>
+
+    <button onclick="reminder()">⏰ Study Reminder</button>
+
+    <button onclick="statistics()">📊 My Statistics</button>
+
+    <button onclick="about()">ℹ️ About CHADGO</button>
+
+    <button onclick="privacy()">🔒 Privacy</button>
+
+    <button onclick="help()">❓ Help & Support</button>
+
+    <button class="danger" onclick="resetApp()">
+        🔄 Reset Progress
+    </button>
+</section>
+
+</main>
+
+
+<!-- BOTTOM NAVIGATION: TOKKO QOFA -->
+<nav>
+
+    <button onclick="showPage('home')">
+        🏠
+        <span>Home</span>
+    </button>
+
+    <button onclick="showPage('learn')">
+        📚
+        <span>Learn</span>
+    </button>
+
+    <button onclick="showPage('quiz')">
+        📝
+        <span>Quiz</span>
+    </button>
+
+    <button onclick="showPage('goals')">
+        🎯
+        <span>Goals</span>
+    </button>
+
+    <button onclick="showPage('profile')">
+        👤
+        <span>Profile</span>
+    </button>
+
+    <button onclick="showPage('settings')">
+        ⚙️
+        <span>Settings</span>
+    </button>
+
+</nav>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
