@@ -1,38 +1,40 @@
-const CACHE_NAME = "chadgo-academy-v1";
+const CACHE_NAME = "chadgo-academy-v2";
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
   "./style.css",
   "./script.js",
-  "./manifest.json"
+  "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(FILES_TO_CACHE);
-    })
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(FILES_TO_CACHE))
+      .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then(function(names) {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        names.map(function(name) {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request).then((response) => {
       return response || fetch(event.request);
     })
   );
