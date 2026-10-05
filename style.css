@@ -1,0 +1,158 @@
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#080d1d;
+color:white;
+padding-bottom:90px;
+}
+
+header{
+background:linear-gradient(135deg,#1565c0,#512da8);
+padding:35px 25px;
+border-radius:0 0 40px 40px;
+}
+
+header h1{font-size:30px;margin-bottom:10px}
+header p{font-size:17px}
+
+main{max-width:800px;margin:auto;padding:25px 20px}
+
+.page{display:none}
+.page.active{display:block}
+
+h2{font-size:30px;margin-bottom:20px}
+
+.card{
+background:#171e38;
+border:1px solid #303b5d;
+border-radius:22px;
+padding:22px;
+margin-bottom:18px;
+}
+
+.card h3{margin-bottom:12px;font-size:21px}
+.card p{margin:10px 0;color:#d1d7e8}
+
+button{
+background:#1565c0;
+color:white;
+border:0;
+border-radius:14px;
+padding:15px;
+margin:6px 3px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:active{transform:scale(.96)}
+
+.progress{
+height:14px;
+background:#303953;
+border-radius:20px;
+overflow:hidden;
+margin:12px 0;
+}
+
+#progressBar{
+height:100%;
+width:0%;
+background:#42a5f5;
+transition:.3s;
+}
+
+#learnResult,#quizResult{margin-top:18px}
+
+.profile{text-align:center}
+.avatar{font-size:60px;margin-bottom:10px}
+
+.setting{
+background:#171e38;
+border:1px solid #303b5d;
+border-radius:18px;
+padding:17px;
+margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.setting b{display:block}
+.setting small{display:block;color:#aeb8d0;margin-top:5px}
+
+.setting input[type="checkbox"]{
+width:45px;
+height:24px;
+}
+
+select{
+background:#293452;
+color:white;
+border:0;
+border-radius:8px;
+padding:9px;
+}
+
+.setting+button{
+width:100%;
+text-align:left;
+background:#171e38;
+border:1px solid #303b5d;
+}
+
+.danger{background:#a52525!important}
+
+nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:82px;
+background:#11182d;
+border-top:1px solid #303b5d;
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:1000;
+}
+
+nav button{
+background:transparent;
+margin:0;
+padding:7px 3px;
+font-size:19px;
+}
+
+nav span{
+display:block;
+font-size:10px;
+margin-top:3px;
+}
+
+body.light{
+background:#f1f4f9;
+color:#111;
+}
+
+body.light .card,
+body.light .setting,
+body.light .setting+button{
+background:white;
+color:#111;
+}
+
+body.light nav{
+background:white;
+}
+
+body.light .setting small{
+color:#555;
+}
+
+@media(max-width:500px){
+header h1{font-size:27px}
+h2{font-size:28px}
+button{padding:14px}
+}
